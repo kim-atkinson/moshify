@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <ul class="list list--tick">
-      <li class="list__item">Item 1</li>
-      <li class="list__item">Item 2</li>
-      <li class="list__item">Item 3</li>
-    </ul>
+    <span class="icon-container">
+      <!-- This is the benefit of object-oriented css, separating structure "icon" from skin "icon--primary" to create different skins which can later be combined to achieve different results -->
+      <svg class="icon icon--primary">
+        <use xlink:href="images/sprite.svg#wordpress"></use>
+      </svg>
+    </span>
   </body>
 </html>
