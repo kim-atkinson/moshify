@@ -1,3 +1,6 @@
+/* The :root selector targets the highest level parent, which would be the <html> tag in an HTML document. The :root has a higher specificity, as it is a pseudo-class instead of a plain element.
+ */
+
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -9,13 +12,14 @@
 *,
 *::after,
 *::before {
+  /* border-box: the width and height properties (and min/max properties) includes content, padding and border */
   box-sizing: border-box;
 }
 
 /* Typography */
 
 html {
-  /* 62.5% of 16px = 1-px */
+  /* 62.5% of 16px = 10px */
   font-size: 62.5%;
 }
 
@@ -42,7 +46,6 @@ h2 {
 }
 h3 {
   font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 p {
@@ -85,12 +88,15 @@ a {
   content: "-->";
   /* Using a pixel value because always wants a little bit of space no matter how big the screen gets */
   margin-left: 5px;
+  /* identify the element you want to target then add transition */
   transition: margin 0.15s;
 }
 
 .link-arrow:hover::after {
   margin-left: 10px;
 }
+
+/* create media queries for each component to make it easier to locate and enable option to keep or change component at different breakpoints */
 @media screen and (min-width: 1024px) {
   .link-arrow {
     font-size: 1.5rem;
@@ -163,6 +169,7 @@ a {
 }
 
 .icon--primary {
+  /* fill property only applies to svg images */
   fill: var(--color-primary);
 }
 
@@ -177,7 +184,9 @@ a {
   border-radius: 100%;
   /* Block isn't being used because it might be used next to an element and doesn't want a line-breaker. inline-block changed to flex */
   display: inline-flex;
+  /* alinging on the primary access, which is by default the horizontal access */
   justify-content: center;
+  /* aligning on the secondary axis, which is by default the vertical access */
   align-items: center;
 }
 
@@ -193,9 +202,11 @@ a {
   padding: 2rem 3rem;
   text-align: center;
   text-transform: uppercase;
+  /* in case there's limited space, don't want the button to wrap onto the second line */
   white-space: nowrap;
 }
 
+/* by default browser set sizing of button elements to border box */
 .btn--primary {
   background: var(--color-primary);
   color: #ffffff;
@@ -225,6 +236,7 @@ a {
 
 .btn--block {
   width: 100%;
+  /* anchor elements are inline by default, if you just give them a width, that's not going to work */
   display: inline-block;
 }
 
