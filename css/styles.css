@@ -172,9 +172,18 @@ a {
   height: 40px;
 }
 
+.icon--small {
+  height: 30px;
+  width: 30px;
+}
+
 .icon--primary {
   /* fill property only applies to svg images */
   fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: #ffffff;
 }
 
 /* Could create use cases from other icon colors, however, not necessary right now. No need to solve a problem that doesn't exist. A lot of developers fall in that trap of over-engineering and solving non-existent problems.  */
@@ -194,6 +203,9 @@ a {
   align-items: center;
 }
 
+.icon-container--accent {
+  background: var(--color-accent);
+}
 /* Buttons */
 
 .btn {
@@ -478,5 +490,42 @@ a {
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Testimonials */
+
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+}
+
+/* most times you should avoid direct child selector because you don't want your CSS to know about your markup because if the markup changes you have to comeback and change your CSS as well, but this is an exception , or you can just creat a whole other class 5:18 time-stamp */
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  /* initially positioned at the edge of the testimonial image. got the right number by dividing the icon size by 2 */
+  right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
   }
 }
