@@ -15,13 +15,28 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div style="width: 30%; padding: 4rem">
-      <div class="card card--secondary">
-        <!-- double underscore because the header is an element inside the block, can't exist outside the block/outside component -->
-        <header class="card__header">Card Title</header>
-        <div class="card__body">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
-          laboriosam!
+    <div style="width: 50%; padding: 4rem">
+      <div class="plan">
+        <div class="card card--secondary">
+          <header class="card__header">
+            <!-- to make markups semantic, you should not skip any headings. we use headings to define a proper heirarchy. ex. if you have an h2 element, you shouldn't jump to an h6 element. -->
+            <!-- give "Entry" a class because if you were to change to an h4, for example, the styles won't break. -->
+            <!-- "plan__name" name element inside the plan component/block. the name element doesn't exist on its own -->
+            <h3 class="plan__name">Entry</h3>
+            <span class="plan__price">$14</span>
+            <span class="plan__billing-cycle">/month</span>
+            <span class="badge badge--secondary badge--small">10% OFF</span>
+            <span class="plan__description">Easy start on the cloud</span>
+          </header>
+          <div class="card__body">
+            <ul class="list list--tick">
+              <li class="list__item">Unlimited Websites</li>
+              <li class="list__item">Unlimited Bandwidth</li>
+              <li class="list__item">100GB SSD Storage</li>
+              <li class="list__item">3GB RAM</li>
+            </ul>
+            <button class="btn btn--outline btn--block">Buy Now</button>
+          </div>
         </div>
       </div>
     </div>
