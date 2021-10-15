@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/kim-atkinson/moshify#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
-  },
-  
-  "build": "parcel build index.html"
+    "parcel-bundler": "^1.12.4"
+  }
 }
