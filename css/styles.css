@@ -581,6 +581,10 @@ a {
 .callout--primary {
   background: var(--color-primary);
   color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  bottom: -100px;
 }
 
 .callout__heading {
