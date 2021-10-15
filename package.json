@@ -19,6 +19,9 @@
   "homepage": "https://github.com/kim-atkinson/moshify#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
-  }
+  },
+  
+ "resolutions": {
+  "@babel/preset-env": "7.13.8"
 }
-
+}
